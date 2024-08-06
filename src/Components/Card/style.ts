@@ -13,7 +13,7 @@ export const Container = styled.div`
 export const InputContainer = styled.div`
   display: flex;
   width: 100%;
-  flex-direction: row;
+  flex-direction: column;
   gap: 10px;
 `
 
@@ -22,4 +22,9 @@ export const TextError = styled.p`
   font-size: 12px;
   margin-top: 5px;
   width: 100%;
+`
+export const Tittle = styled.h1`
+  font-size: 12px;
+  color: #000;
+  margin: 0;
 `

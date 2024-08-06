@@ -12,9 +12,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
+    <GlobalStyle />
     <ChakraProvider>
       <QueryClientProvider client={queryClient}>
-        <GlobalStyle />
         <App />
       </QueryClientProvider>
     </ChakraProvider>

@@ -8,14 +8,16 @@ import {
 } from './style';
 import { ICardBodyProps } from './type';
 import arrow from '../../assets/icon/seta-esquerda.png';
+import { Image } from '@chakra-ui/react';
 
-const CardBody = ({propsData, onClick}: ICardBodyProps) => {
+const CardBody = ({ propsData, onClick }: ICardBodyProps) => {
 
   return (
     //CONTEUDO DO COMPONENTE
     // CONDITION, LOCAL TIME, IS_DAY,
     <Container is_day={propsData.is_day}>
       <Header>
+        <Image src={propsData.condition?.icon} alt={propsData.condition?.text} boxSize="50" m={0} />
         <ArrowButton onClick={onClick}>
           <img src={arrow} alt="seta para esquerda" width="30" />
         </ArrowButton>

@@ -19,6 +19,7 @@ export const Container = styled.div<ICardProps>`
 export const Informations = styled.div<ICardProps>`
   width: 100%;
   background-color: ${props => props.is_day === 1 ? 'rgba(255, 255, 255, 0.29)' : 'rgba(0, 0, 0, 0.29)'};
+  margin-bottom: 5px;
   height: 112px;
   border-radius: 0 0 20px 20px;
   display: flex;
@@ -37,7 +38,7 @@ export const Temperature = styled.p`
 export const Header = styled.div`
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
 `
 export const ArrowButton = styled.button<ICardProps>`

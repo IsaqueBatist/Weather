@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container, InputContainer, TextError } from './style';
+import { Container, InputContainer, TextError, Tittle } from './style';
 import Input from '../input';
 import Button from '../Button';
 import CardBody from '../CardBody';
@@ -42,16 +42,18 @@ const Card = () => {
 
   return (
     <>
-    {isLoading? <Spinner size='xl' /> : (
+    
+    {isLoading? <Spinner size='xl' color="white"/> : (
         < Container >
           <InputContainer>
+            <Tittle>Search weather of: </Tittle>
             <form style={{ display: 'flex' }} onSubmit={handleSubmit}>
               <Input value={valueInput} onChange={(e) => setValueInput(e.target.value)} isrequired={true} />
               <Button />
             </form>
           </InputContainer>
           {error && (
-            error?.response && error?.response.data.error.code === 1006 && <TextError>Nada localizado</TextError>
+            error?.response && error?.response.data.error.code === 1006 && <TextError>No matching location found</TextError>
           )}
         </Container >
     )}

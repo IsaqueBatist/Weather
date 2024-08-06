@@ -10,6 +10,7 @@ const ButtonContainer = styled.button`
   background-color: #f5f5f5;
   padding: 10px;
   border-radius: 10px;
+  margin-left: 10px;
 `;
 const Button = ({onClick}: IButtonProps) => {
   return (
