@@ -1,49 +1,64 @@
-import React, { useState } from 'react';
-import { Container, InputContainer } from './style';
+import React, { useEffect, useState } from 'react';
+import { Container, InputContainer, TextError } from './style';
 import Input from '../input';
 import Button from '../Button';
 import CardBody from '../CardBody';
 import { api } from '../../services/api';
 import { Console } from 'console';
+import { useQuery } from 'react-query';
+import { Spinner } from '@chakra-ui/react';
 const Card = () => {
 
   const [valueInput, setValueInput] = useState('');
-  const [data, setData] = useState<any>({} as any);
+  const [fetchedData, setFetchedData] = useState(null);
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    await handleGetData()
-  }
-
-  const handleGetData = async () => {
-    try {
-      const {data} = await api.get(`/current.json`,{
-        params: {
-          q: valueInput
-        }
-      });
-      if(data.location && data.current){
-        const { temp_f, condition, is_day} = data.current;
-        const {name, region, country, localtime} = data.location;
-        setData({name, region, country, localtime, temp_f, condition, is_day});
-      }else {
-        console.log('dados não encontrados')
+  const { data, isLoading, error, refetch } = useQuery('weather', () => {
+    return api.get(`/current.json`, {
+      params: {
+        q: valueInput
       }
-    } catch (error) {
-      console.log(error);
-    }
+    }).then(response => response.data)
+  }, {
+    enabled: false,
+    refetchInterval: 10000,
+    onSuccess: ((data) => { setFetchedData(data) })
+  }) as { data: any, isLoading: boolean, error: any, refetch: () => void };
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    refetch()
   }
+  const handleResetData = () => {
+    setFetchedData(null)
+  }
+  let deserializedData = {}
+  if (fetchedData) {
+    const { location, current } = fetchedData;
+    const { name, region, country, localtime } = location || {};
+    const { temp_f, condition, is_day } = current || {};
+    deserializedData = { name, region, country, localtime, temp_f, condition, is_day };
+  }
+
+
   return (
     <>
-      <Container>
-        <InputContainer>
-          <form style={{ display: 'flex' }} onSubmit={handleSubmit}>
-            <Input value={valueInput} onChange={(e) => setValueInput(e.target.value)} isrequired={true} />
-            <Button />
-          </form>
-        </InputContainer>
-      </Container>
-      <CardBody condition={data.condition} country={data.country} is_day={data.is_day} localtime={data.localtime} name={data.name} region={data.region} temp_f={data.temp_f} />
+    {isLoading? <Spinner size='xl' /> : (
+        < Container >
+          <InputContainer>
+            <form style={{ display: 'flex' }} onSubmit={handleSubmit}>
+              <Input value={valueInput} onChange={(e) => setValueInput(e.target.value)} isrequired={true} />
+              <Button />
+            </form>
+          </InputContainer>
+          {error && (
+            error?.response && error?.response.data.error.code === 1006 && <TextError>Nada localizado</TextError>
+          )}
+        </Container >
+    )}
+
+
+      {fetchedData && <CardBody propsData={deserializedData} onClick={handleResetData} />}
+
     </>
   );
 }

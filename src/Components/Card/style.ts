@@ -16,3 +16,10 @@ export const InputContainer = styled.div`
   flex-direction: row;
   gap: 10px;
 `
+
+export const TextError = styled.p`
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  width: 100%;
+`
