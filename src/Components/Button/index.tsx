@@ -13,7 +13,7 @@ const ButtonContainer = styled.button`
 `;
 const Button = ({onClick}: IButtonProps) => {
   return (
-    <ButtonContainer type='button' onClick={onClick}>
+    <ButtonContainer type='submit' onClick={onClick}>
       <img src={lupaIcon}alt="lupa.png" width="20"/>
     </ButtonContainer>
   );

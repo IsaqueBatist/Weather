@@ -1,8 +1,9 @@
 import React from 'react';
 import { Input } from './style';
-const input = () => {
+import { IInputPropos } from './type';
+const input = ({value, onChange, isrequired}: IInputPropos) => {
   return (
-    <Input />
+    <Input value={value} onChange={onChange} required={isrequired}/>
   );
 }
 export default input
