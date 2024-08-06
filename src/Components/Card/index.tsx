@@ -4,7 +4,6 @@ import Input from '../input';
 import Button from '../Button';
 import CardBody from '../CardBody';
 import { api } from '../../services/api';
-import { Console } from 'console';
 import { useQuery } from 'react-query';
 import { Spinner } from '@chakra-ui/react';
 const Card = () => {
