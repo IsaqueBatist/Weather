@@ -9,8 +9,7 @@ export const GlobalStyle = createGlobalStyle`
     transition: all 0.3s;
   }
   body{
-    background: #000 !important;
-    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(68,68,68,1) 100%) !important;
+    background: ${({theme}) => theme.body.background};
     width: 100% !important;
     height: 100vh !important;
     display: flex !important;

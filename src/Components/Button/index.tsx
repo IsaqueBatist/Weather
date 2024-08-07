@@ -9,8 +9,8 @@ const ButtonContainer = styled.button`
   cursor: pointer;
   background-color: #f5f5f5;
   padding: 10px;
-  border-radius: 10px;
-  margin-left: 10px;
+  border-radius: 0 10px 10px 0;
+  margin-left: 0px;
 `;
 const Button = ({onClick}: IButtonProps) => {
   return (

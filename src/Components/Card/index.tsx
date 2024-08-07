@@ -5,7 +5,7 @@ import Button from '../Button';
 import CardBody from '../CardBody';
 import { api } from '../../services/api';
 import { useQuery } from 'react-query';
-import { Spinner } from '@chakra-ui/react';
+import { background, Spinner } from '@chakra-ui/react';
 const Card = () => {
 
   const [valueInput, setValueInput] = useState('');
@@ -46,7 +46,7 @@ const Card = () => {
         < Container >
           <InputContainer>
             <Tittle>Search weather of: </Tittle>
-            <form style={{ display: 'flex' }} onSubmit={handleSubmit}>
+            <form style={{ display: 'flex'}} onSubmit={handleSubmit}>
               <Input value={valueInput} onChange={(e) => setValueInput(e.target.value)} isrequired={true} />
               <Button />
             </form>

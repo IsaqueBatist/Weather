@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 243px;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.cardColor};
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -25,6 +25,6 @@ export const TextError = styled.p`
 `
 export const Tittle = styled.h1`
   font-size: 12px;
-  color: #000;
+  color: ${({ theme }) => theme.titleColor};;
   margin: 0;
 `
