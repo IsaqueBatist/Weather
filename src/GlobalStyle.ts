@@ -13,5 +13,9 @@ export const GlobalStyle = createGlobalStyle`
     align-items: center;
     height: 100vh;
     background-color: #212121;
+    font-family: 'Inter', sans-serif;
+  }
+  :root{
+    font-size: 10px;
   }
 `;
