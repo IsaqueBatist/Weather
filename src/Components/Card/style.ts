@@ -18,10 +18,6 @@ export const CurrentContainer = styled.div`
 export const CurrentWeather = styled.div`
   padding: 7rem 0 0 5rem;
 `
-export const ForecastContainer = styled.div`
-  width:50%;
-  background-color: red;
-`
 
 export const City = styled.p`
   font-size: 7rem;
@@ -38,6 +34,7 @@ export const Data = styled.p`
   font-weight: 500;
   margin-left: 1rem;
 `
+
 export const ImageContainer = styled.div`
   width:100%;
   display: flex;
@@ -45,3 +42,35 @@ export const ImageContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
 `
+
+export const ForecastContainer = styled.div`
+  width:50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+`
+
+export const ForecastWeather = styled.div`
+  width: 95%;
+  height: 95%;
+  background-color:  #00000014;
+  border-radius: 2rem;
+`
+export const ForecastTitle = styled.div`
+  width: 100%;
+  text-align: center;                           
+  p{
+    font-size: 4rem;
+    font-weight: bold;
+  }
+`
+export const ForecastItem = styled.div`
+  width: 100%;
+  margin: 2rem 0 0 2rem;
+  p{
+    margin-top: 3rem;
+    font-size: 2.4rem;
+  }
+`
+export const ForecastItemContainer = styled.div``
