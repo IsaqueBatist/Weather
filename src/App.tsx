@@ -1,10 +1,11 @@
-import React from 'react';
-
+import React, { useState } from 'react';
+import Input from './Components/Input';
 function App() {
+  const [value, setValue] = useState('');
+  
+  
   return (
-    <div>
-      Hello World
-    </div>
+    <Input onChange={(e) => setValue(e.target.value)}/>
   );
 }
 
