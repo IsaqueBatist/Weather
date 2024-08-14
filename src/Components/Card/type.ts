@@ -1,5 +1,6 @@
 export interface IMainData{
   data?: IData
+  onClick?: () => void;
 }
 
 interface IData{

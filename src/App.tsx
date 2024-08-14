@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Input from './Components/Input';
 import Card from './Components/Card';
+import Loader from './Components/Loader';
 import { useQuery } from 'react-query';
 import { api } from './service/api';
-import Loader from './Components/Loader';
 import { IMainData } from './Components/Card/type';
-import { icons } from './resources/Icons/weathericon';
-import { GlobalStyle } from './GlobalStyle';
+import { GlobalStyle} from './GlobalStyle';
 import { ErrorMesssage } from './styles/style';
 function App() {
   const [value, setValue] = useState('');
@@ -17,26 +16,18 @@ function App() {
     return api.get('/forecast.json', {
       params: {
         q: city,
-        days: 1,
+        days: 2,
       },
     });
   };
 
-  const { data, isFetching, refetch, error } = useQuery('weather', async () => {
-    return fetchWeather(value);
-  }, {
+  const { data, isFetching, refetch, error } = useQuery('weather', async () => { return fetchWeather(value); }, {
     enabled: false,
-    onSuccess: (response) => {
-      const { location, current, forecast } = response.data;
-      //location
+    onSuccess: ({ data: { location, current, forecast } }) => {
       const { name, localtime } = location;
-      //current
       const { temp_c, is_day, condition } = current;
-      //forecast
-      const { forecastday } = forecast;
-      const { date, day, astro } = forecastday[0];
-      const { maxtemp_c, mintemp_c, condition: conditionForecast, maxwind_kph } = day;
-      const { sunrise, sunset } = astro;
+      const { date, day: { maxtemp_c, mintemp_c, condition: conditionForecast, maxwind_kph }, astro: { sunrise, sunset } } = forecast.forecastday[1];
+  
       getDayPeriod(localtime);
       setMainData({
         data: {
@@ -61,6 +52,10 @@ function App() {
     }
   }) as ({ data: any, isFetching: boolean, refetch: () => void, error: any });
   const handleClick = () => {
+    if(value === ''){
+      alert('city name is required');
+      return
+    };
     refetch();
   }
   const getDayPeriod = (localtime: string = ''): void => {
@@ -83,7 +78,7 @@ function App() {
       </>
     )
   }
-  if(error){
+  if (error) {
     console.log(error)
   }
 
@@ -91,9 +86,9 @@ function App() {
   return (
     <>
       <GlobalStyle bgColor={bgColor} />
-      {error?.message && <ErrorMesssage>{error.message}</ErrorMesssage>}
-      <Input onChange={(e) => setValue(e.target.value)} onClick={handleClick} />
-      {mainData.data && <Card data={mainData.data} />}
+      {error?.response.status === 400 && <ErrorMesssage>City not found</ErrorMesssage>}
+      {!mainData.data &&  <Input  onChange={(e) => setValue(e.target.value)} onClick={handleClick} />}
+      {mainData.data && <Card data={mainData.data} onClick={() => setMainData({} as IMainData)}/>}
     </>
   );
 }

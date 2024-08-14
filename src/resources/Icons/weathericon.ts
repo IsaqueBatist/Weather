@@ -104,6 +104,10 @@ export const icons: IWeatherIcons = {
     day: PatchyLightRainDay,
     night: PatchyLightRainNight,
   },
+  "Patchy rain nearby":{
+    day: PatchyRainDay,
+    night: PatchyRainNight,
+  },
   "Light rain": {
     day: LightRainDay,
     night: LightRainNight,
