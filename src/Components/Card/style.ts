@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import Celcius from "../../assets/icons/Weather-Icons-IOS7-Style-PIXEDEN/SVG/degree-celcius.svg"
 export const MainContainer = styled.div`
   background-color: #00000014;
   width: 70vw;
@@ -27,6 +27,15 @@ export const City = styled.p`
 export const Temperature = styled.p`
   font-size: 9.6rem;
   font-weight: 600;
+  &::after{
+    content:' ';
+    width: 90px;
+    height: 90px;
+    background: url(${Celcius}) no-repeat;
+    background-size: contain;
+    filter: invert(1);
+    display: inline-block;
+  }
 `
 
 export const Data = styled.p`

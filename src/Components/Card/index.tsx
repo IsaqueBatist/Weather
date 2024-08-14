@@ -1,5 +1,4 @@
 import React from 'react';
-import sun from '../../assets/icons/Weather-Icons-IOS7-Style-PIXEDEN/SVG/sun.svg';
 import {
   City,
   CurrentContainer,
@@ -13,16 +12,17 @@ import {
   MainContainer,
   Temperature
 } from './style';
+import { icons } from '../../resources/Icons/weathericon';
 const Card = () => {
   return (
     <MainContainer>
       <CurrentContainer>
         <CurrentWeather>
           <City>Itu</City>
-          <Temperature>16.1 °C</Temperature>
+          <Temperature>16.1</Temperature>
           <Data>2024-08-13</Data>
           <ImageContainer>
-            <img src={sun} alt="sunset"  style={{filter: 'invert(1)'}} width="150"/>
+            <img src={icons.Sunny?.day} alt="sunset"  style={{filter: 'invert(1)'}} width="150"/>
           </ImageContainer>
         </CurrentWeather>
       </CurrentContainer>
