@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
+import { GlobalStyleProps } from "./types/globalstyle";
 
-export const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
   *{
     margin: 0;
     padding: 0;
@@ -12,7 +13,7 @@ export const GlobalStyle = createGlobalStyle`
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #212121;
+    background: ${props => props.bgColor};
     font-family: 'Inter', sans-serif;
   }
   :root{

@@ -13,16 +13,18 @@ import {
   Temperature
 } from './style';
 import { icons } from '../../resources/Icons/weathericon';
-const Card = () => {
+import { IMainData } from './type';
+const Card = ({data}: IMainData) => {
+  const conditionText = data?.current.image;
   return (
     <MainContainer>
       <CurrentContainer>
         <CurrentWeather>
-          <City>Itu</City>
-          <Temperature>16.1</Temperature>
-          <Data>2024-08-13</Data>
+          <City>{data?.current.city}</City>
+          <Temperature>{data?.current.tempC}</Temperature>
+          <Data>{data?.current.localtime}</Data>
           <ImageContainer>
-            <img src={icons.Sunny?.day} alt="sunset"  style={{filter: 'invert(1)'}} width="150"/>
+            <img src={data?.current.is_day === 1 ? icons[conditionText]?.day : icons[conditionText]?.night} alt="sunset" style={{ filter: 'invert(1)' }} width="150" />
           </ImageContainer>
         </CurrentWeather>
       </CurrentContainer>
@@ -32,13 +34,13 @@ const Card = () => {
             <p>Forecast</p>
           </ForecastTitle>
           <ForecastItem>
-            <p><b>Date:</b> 2024-08-13</p>
-            <p><b>Max Temp:</b> 18.6 °C</p>
-            <p><b>Min Temp:</b> 7.7 °C</p>
-            <p><b>Condition:</b> Sunny</p>
-            <p><b>Max WindSpeed:</b> 23 km/h</p>
-            <p><b>Sunrise:</b> 06:36 AM</p>
-            <p><b>Sunset:</b> 05:53 PM</p>
+            <p><b>Date:</b>{data?.forecast.date}</p>
+            <p><b>Max Temp:</b>{data?.forecast.maxTemp} °C</p>
+            <p><b>Min Temp:</b>{data?.forecast.minTemp} °C</p>
+            <p><b>Condition:</b>{data?.forecast.condition}</p>
+            <p><b>Max WindSpeed:</b> {data?.forecast.maxWindSpeed} km/h</p>
+            <p><b>Sunrise:</b> {data?.forecast.sunrise}</p>
+            <p><b>Sunset:</b> {data?.forecast.sunset}</p>
           </ForecastItem>
         </ForecastWeather>
       </ForecastContainer>

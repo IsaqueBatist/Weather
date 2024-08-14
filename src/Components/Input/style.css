@@ -10,8 +10,8 @@
 /* styling of whole input container */
 .form {
   --timing: 0.3s;
-  --width-of-input: 200px;
-  --height-of-input: 40px;
+  --width-of-input: 400px;
+  --height-of-input: 80px;
   --border-height: 2px;
   --input-bg: #fff;
   --border-color: #2f2ee9;
@@ -29,7 +29,7 @@
 }
 /* styling of Input */
 .input {
-  font-size: 0.9rem;
+  font-size: 2rem;
   background-color: transparent;
   width: 100%;
   color: black;
@@ -79,6 +79,6 @@ input:not(:placeholder-shown) ~ .reset {
 }
 /* sizing svg icons */
 .form svg {
-  width: 17px;
+  width: 34px;
   margin-top: 3px;
 }

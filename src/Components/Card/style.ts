@@ -82,4 +82,3 @@ export const ForecastItem = styled.div`
     font-size: 2.4rem;
   }
 `
-export const ForecastItemContainer = styled.div``
