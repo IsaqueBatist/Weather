@@ -20,7 +20,7 @@ const Card = ({ data, onClick }: IMainData) => {
 
   const conditionText = data?.current.image;
 
-  const handleGetFormatedData = (current : boolean): string => {
+  const handleGetFormatedData = (current: boolean): string => {
     if (data && current) {
       const dateString = data?.current.localtime;
       const date = new Date(dateString);
@@ -31,7 +31,7 @@ const Card = ({ data, onClick }: IMainData) => {
       const dateString = data?.forecast.date;
       const [year, month, day] = dateString.split('-');
       return `${month}-${day}`;
-    }else {
+    } else {
       return '0-0'
     }
   }
@@ -40,7 +40,7 @@ const Card = ({ data, onClick }: IMainData) => {
       <CurrentContainer>
         <Arrow src={ArrowIcon} alt="arrowIocn" onClick={onClick} />
         <CurrentWeather>
-          <Image src={data?.current.is_day === 1 ? icons[conditionText]?.day : icons[conditionText]?.night} alt={data?.current.image} />
+          <Image src={data?.current.is_day === 1 ? icons[conditionText.replace(/\s+/, "")]?.day : icons[conditionText.replace(/\s+/, "")]?.night} alt={data?.current.image} />
           <City>{data?.current.city}</City>
           <Temperature>{data?.current.tempC}</Temperature>
           <Data>{handleGetFormatedData(true)}</Data>
@@ -52,13 +52,15 @@ const Card = ({ data, onClick }: IMainData) => {
             <p>Forecast</p>
           </ForecastTitle>
           <ForecastItem>
-            <p><b>Date:</b> {handleGetFormatedData(false)}</p>
-            <p><b>Max Temp:</b> {data?.forecast.maxTemp} °C</p>
-            <p><b>Min Temp:</b> {data?.forecast.minTemp} °C</p>
-            <p><b>Condition:</b> {data?.forecast.condition}</p>
-            <p><b>Max WindSpeed:</b> {data?.forecast.maxWindSpeed} km/h</p>
-            <p><b>Sunrise:</b> {data?.forecast.sunrise}</p>
-            <p><b>Sunset:</b> {data?.forecast.sunset}</p>
+
+            <li><p><b>Date:</b> {handleGetFormatedData(false)}</p></li>
+            <li><p><b>Max Temp:</b> {data?.forecast.maxTemp} °C</p></li>
+            <li><p><b>Min Temp:</b> {data?.forecast.minTemp} °C</p></li>
+            <li><p><b>Condition:</b> {data?.forecast.condition}</p></li>
+            <li><p><b>Max WindSpeed:</b> {data?.forecast.maxWindSpeed} km/h</p></li>
+            <li><p><b>Sunrise:</b> {data?.forecast.sunrise}</p></li>
+            <li><p><b>Sunset:</b> {data?.forecast.sunset}</p></li>
+
           </ForecastItem>
         </ForecastWeather>
       </ForecastContainer>

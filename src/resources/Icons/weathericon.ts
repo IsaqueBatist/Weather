@@ -32,7 +32,7 @@ export const icons: IWeatherIcons = {
   "Clear": {
     night: Clear,
   },
-  "Partly cloudy": {
+  "PartlyCloudy": {
     day: PartlyCloudyDay,
     night: PartlyCloudyNight,
   },
@@ -48,27 +48,27 @@ export const icons: IWeatherIcons = {
     day: Mist,
     night: Mist,
   },
-  "Patchy rain possible": {
+  "PatchyRainPossible": {
     day: PatchyRainDay,
     night: PatchyRainNight,
   },
-  "Patchy snow possible": {
+  "PatchySnowPossible": {
     day: PatchySnowDay,
     night: PatchySnowNight,
   },
-  "Patchy sleet possible": {
+  "PatchySleetPossible": {
     day: PatchySleetDay,
     night: PatchySleetNight,
   },
-  "Patchy freezing drizzle possible": {
+  "PatchyFreezingDrizzlePossible": {
     day: Cloud,
     night: Cloud,
   },
-  "Thundery outbreaks possible": {
+  "ThunderyOutbreaksPossible": {
     day: ThunderyOutbreaksDay,
     night: ThunderyOutbreaksNight,
   },
-  "Blowing snow": {
+  "BlowingSnow": {
     day: Snow,
     night: Snow,
   },
@@ -80,147 +80,147 @@ export const icons: IWeatherIcons = {
     day: Mist,
     night: Mist,
   },
-  "Freezing fog": {
+  "FreezingFog": {
     day: Mist,
     night: Mist,
   },
-  "Patchy light drizzle": {
+  "PatchyLightDrizzle": {
     day: LightDrizzleDay,
     night: LightDrizzleNight,
   },
-  "Light drizzle": {
+  "LightDrizzle": {
     day: LightDrizzleDay,
     night: LightDrizzleNight,
   },
-  "Freezing drizzle": {
+  "FreezingDrizzle": {
     day: LightDrizzleDay,
     night: LightDrizzleNight,
   },
-  "Heavy freezing drizzle": {
+  "HeavyFreezingDrizzle": {
     day: Blizzard,
     night: Blizzard,
   },
-  "Patchy light rain": {
+  "PatchyLightRain": {
     day: PatchyLightRainDay,
     night: PatchyLightRainNight,
   },
-  "Patchy rain nearby":{
+  "PatchyRainNearby": {
     day: PatchyRainDay,
     night: PatchyRainNight,
   },
-  "Light rain": {
+  "LightRain": {
     day: LightRainDay,
     night: LightRainNight,
   },
-  "Moderate rain at times": {
+  "ModerateRainAtTimes": {
     day: LightRainDay,
     night: LightRainNight,
   },
-  "Moderate rain": {
+  "ModerateRain": {
     day: Rain,
     night: Rain,
   },
-  "Heavy rain at times": {
+  "HeavyRainAtTimes": {
     day: PatchyLightRainDay,
     night: PatchyLightRainNight,
   },
-  "Heavy rain": {
+  "HeavyRain": {
     day: Rain,
     night: Rain,
   },
-  "Light freezing rain": {
+  "LightFreezingRain": {
     day: PatchySnowDay,
     night: PatchySnowNight,
   },
-  "Moderate or heavy freezing rain": {
+  "ModerateOrHeavyFreezingRain": {
     day: HeavyFreezingRainDay,
     night: LightSleetNight,
   },
-  "Light sleet": {
+  "LightSleet": {
     day: PatchySleetDay,
     night: PatchySleetNight,
   },
-  "Moderate or heavy sleet": {
+  "ModerateOrHeavySleet": {
     day: PatchySleetDay,
     night: PatchySleetNight,
   },
-  "Patchy light snow": {
+  "PatchyLightSnow": {
     day: PatchySnowDay,
     night: PatchySnowNight,
   },
-  "Light snow": {
+  "LightSnow": {
     day: Snow,
     night: Snow,
   },
-  "Patchy moderate snow": {
+  "PatchyModerateSnow": {
     day: Blizzard,
     night: Blizzard,
   },
-  "Moderate snow": {
+  "ModerateSnow": {
     day: Snow,
     night: Snow,
   },
-  "Patchy heavy snow": {
+  "PatchyHeavySnow": {
     day: Snow,
     night: Snow,
   },
-  "Heavy snow": {
+  "HeavySnow": {
     day: PatchySnowDay,
     night: PatchySnowNight,
   },
-  "Ice pellets": {
+  "IcePellets": {
     day: Snow,
     night: Snow,
   },
-  "Light rain shower": {
+  "LightRainShower": {
     day: LightRainDay,
     night: LightRainNight,
   },
-  "Moderate or heavy rain shower": {
+  "ModerateOrHeavyRainShower": {
     day: LightRainDay,
     night: LightRainNight,
   },
-  "Torrential rain shower": {
+  "TorrentialRainShower": {
     day: Rain,
     night: Rain,
   },
-  "Light sleet showers": {
+  "LightSleetShowers": {
     day: PatchySnowDay,
     night: PatchySnowNight,
   },
-  "Moderate or heavy sleet showers": {
+  "ModerateOrHeavySleetShowers": {
     day: PatchySnowDay,
     night: PatchySnowNight,
   },
-  "Light snow showers": {
+  "LightSnowShowers": {
     day: Snow,
     night: Snow,
   },
-  "Moderate or heavy snow showers": {
+  "ModerateOrHeavySnowShowers": {
     day: Snow,
     night: Snow,
   },
-  "Light showers of ice pellets": {
+  "LightShowersOfIcePellets": {
     day: Snow,
     night: Snow,
   },
-  "Moderate or heavy showers of ice pellets": {
+  "ModerateOrHeavyShowersOfIcePellets": {
     day: Snow,
     night: Snow,
   },
-  "Patchy light rain with thunder": {
+  "PatchyLightRainWithThunder": {
     day: ThunderyOutbreaksDay,
     night: ThunderyOutbreaksNight,
   },
-  "Moderate or heavy rain with thunder": {
+  "ModerateOrHeavyRainWithThunder": {
     day: Thunder,
     night: Thunder,
   },
-  "Patchy light snow with thunder": {
+  "PatchyLightSnowWithThunder": {
     day: Snow,
     night: Snow,
   },
-  "Moderate or heavy snow with thunder": {
+  "ModerateOrHeavySnowWithThunder": {
     day: Snow,
     night: Snow,
   }

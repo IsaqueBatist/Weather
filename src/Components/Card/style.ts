@@ -9,10 +9,11 @@ export const MainContainer = styled.div`
   flex-direction: row;
   justify-content: center;
   overflow: hidden;
-
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
   @media (max-width: 768px) {
     flex-direction: column;
-    margin-top: 5rem;
+    width: 100vw;
+    margin-top: 40rem
   }
 `
 
@@ -43,8 +44,8 @@ export const Temperature = styled.p`
   font-weight: 600;
   &::after{
     content:' ';
-    width: 70px;
-    height: 70px;
+    width: 7rem;
+    height: 7rem;
     background: url(${Celcius}) no-repeat;
     background-size: contain;
     filter: invert(1);
@@ -59,9 +60,12 @@ export const Data = styled.p`
 `
 
 export const Image = styled.img`
-  width: 150px;
+  width: 15rem;
   margin-bottom: 1.5rem;
   filter: invert(1);
+  @media (max-width: 768px) {
+    width: 7rem;
+  }
 `
 
 export const ForecastContainer = styled.div`
@@ -80,6 +84,10 @@ export const ForecastWeather = styled.div`
   height: 95%;
   background-color:  #00000014;
   border-radius: 2rem;
+  @media (max-width: 768px) {
+    margin-top: 2rem;
+  }
+
 `
 export const ForecastTitle = styled.div`
   width: 100%;
@@ -89,7 +97,9 @@ export const ForecastTitle = styled.div`
     font-weight: bold;
   }
 `
-export const ForecastItem = styled.div`
+export const ForecastItem = styled.ul`
+  list-style-type: none;
+  padding: 0;
   width: 100%;
   margin: 2rem 0 0 2rem;
   p{
@@ -98,7 +108,7 @@ export const ForecastItem = styled.div`
   }
 `
 export const Arrow = styled.img`
-  width: 40px;
+  width: 4rem;
   filter: invert(1);
   margin: 2rem 0 0 2rem;
 
