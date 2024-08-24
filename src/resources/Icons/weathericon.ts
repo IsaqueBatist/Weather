@@ -13,7 +13,7 @@ import PatchySleetDay from '../../assets/icons/Weather-Icons-IOS7-Style-PIXEDEN/
 import PatchySleetNight from '../../assets/icons/Weather-Icons-IOS7-Style-PIXEDEN/SVG/drizzle-moon.svg'
 import ThunderyOutbreaksDay from '../../assets/icons/Weather-Icons-IOS7-Style-PIXEDEN/SVG/lightning-sun.svg'
 import ThunderyOutbreaksNight from '../../assets/icons/Weather-Icons-IOS7-Style-PIXEDEN/SVG/lightning-moon.svg'
-import Thunder from '../../assets/icons/Weather-Icons-IOS7-Style-PIXEDEN/SVG/lightning.svg'
+import ThunderIcon from '../../assets/icons/Weather-Icons-IOS7-Style-PIXEDEN/SVG/lightning.svg'
 import Snow from '../../assets/icons/Weather-Icons-IOS7-Style-PIXEDEN/SVG/snow.svg'
 import Blizzard from '../../assets/icons/Weather-Icons-IOS7-Style-PIXEDEN/SVG/snow-alt.svg'
 import LightDrizzleDay from '../../assets/icons/Weather-Icons-IOS7-Style-PIXEDEN/SVG/drizzle-sun.svg'
@@ -32,7 +32,7 @@ export const icons: IWeatherIcons = {
   "Clear": {
     night: Clear,
   },
-  "PartlyCloudy": {
+  "Partlycloudy": {
     day: PartlyCloudyDay,
     night: PartlyCloudyNight,
   },
@@ -48,27 +48,27 @@ export const icons: IWeatherIcons = {
     day: Mist,
     night: Mist,
   },
-  "PatchyRainPossible": {
+  "Patchyrainpossible": {
     day: PatchyRainDay,
     night: PatchyRainNight,
   },
-  "PatchySnowPossible": {
+  "Patchysnowpossible": {
     day: PatchySnowDay,
     night: PatchySnowNight,
   },
-  "PatchySleetPossible": {
+  "Patchysleetpossible": {
     day: PatchySleetDay,
     night: PatchySleetNight,
   },
-  "PatchyFreezingDrizzlePossible": {
+  "Patchyfreezingdrizzlepossible": {
     day: Cloud,
     night: Cloud,
   },
-  "ThunderyOutbreaksPossible": {
+  "Thunderyoutbreakspossible": {
     day: ThunderyOutbreaksDay,
     night: ThunderyOutbreaksNight,
   },
-  "BlowingSnow": {
+  "Blowingsnow": {
     day: Snow,
     night: Snow,
   },
@@ -80,148 +80,148 @@ export const icons: IWeatherIcons = {
     day: Mist,
     night: Mist,
   },
-  "FreezingFog": {
+  "Freezingfog": {
     day: Mist,
     night: Mist,
   },
-  "PatchyLightDrizzle": {
+  "Patchylightdrizzle": {
     day: LightDrizzleDay,
     night: LightDrizzleNight,
   },
-  "LightDrizzle": {
+  "Lightdrizzle": {
     day: LightDrizzleDay,
     night: LightDrizzleNight,
   },
-  "FreezingDrizzle": {
+  "Freezingdrizzle": {
     day: LightDrizzleDay,
     night: LightDrizzleNight,
   },
-  "HeavyFreezingDrizzle": {
+  "Heavyfreezingdrizzle": {
     day: Blizzard,
     night: Blizzard,
   },
-  "PatchyLightRain": {
+  "Patchylightrain": {
     day: PatchyLightRainDay,
     night: PatchyLightRainNight,
   },
-  "PatchyRainNearby": {
+  "Patchyrainnearby": {
     day: PatchyRainDay,
     night: PatchyRainNight,
   },
-  "LightRain": {
+  "Lightrain": {
     day: LightRainDay,
     night: LightRainNight,
   },
-  "ModerateRainAtTimes": {
+  "Moderaterainattimes": {
     day: LightRainDay,
     night: LightRainNight,
   },
-  "ModerateRain": {
+  "Moderaterain": {
     day: Rain,
     night: Rain,
   },
-  "HeavyRainAtTimes": {
+  "Heavyrainattimes": {
     day: PatchyLightRainDay,
     night: PatchyLightRainNight,
   },
-  "HeavyRain": {
+  "Heavyrain": {
     day: Rain,
     night: Rain,
   },
-  "LightFreezingRain": {
+  "Lightfreezingrain": {
     day: PatchySnowDay,
     night: PatchySnowNight,
   },
-  "ModerateOrHeavyFreezingRain": {
+  "Moderateorheavyfreezingrain": {
     day: HeavyFreezingRainDay,
     night: LightSleetNight,
   },
-  "LightSleet": {
+  "Lightsleet": {
     day: PatchySleetDay,
     night: PatchySleetNight,
   },
-  "ModerateOrHeavySleet": {
+  "Moderateorheavysleet": {
     day: PatchySleetDay,
     night: PatchySleetNight,
   },
-  "PatchyLightSnow": {
+  "Patchylightsnow": {
     day: PatchySnowDay,
     night: PatchySnowNight,
   },
-  "LightSnow": {
+  "Lightsnow": {
     day: Snow,
     night: Snow,
   },
-  "PatchyModerateSnow": {
+  "Patchymoderatesnow": {
     day: Blizzard,
     night: Blizzard,
   },
-  "ModerateSnow": {
+  "Moderatesnow": {
     day: Snow,
     night: Snow,
   },
-  "PatchyHeavySnow": {
+  "Patchyheavysnow": {
     day: Snow,
     night: Snow,
   },
-  "HeavySnow": {
+  "Heavysnow": {
     day: PatchySnowDay,
     night: PatchySnowNight,
   },
-  "IcePellets": {
+  "Icepellets": {
     day: Snow,
     night: Snow,
   },
-  "LightRainShower": {
+  "Lightrainshower": {
     day: LightRainDay,
     night: LightRainNight,
   },
-  "ModerateOrHeavyRainShower": {
+  "Moderateorheavyrainshower": {
     day: LightRainDay,
     night: LightRainNight,
   },
-  "TorrentialRainShower": {
+  "Torrentialrainshower": {
     day: Rain,
     night: Rain,
   },
-  "LightSleetShowers": {
+  "Lightsleetshowers": {
     day: PatchySnowDay,
     night: PatchySnowNight,
   },
-  "ModerateOrHeavySleetShowers": {
+  "Moderateorheavysleetshowers": {
     day: PatchySnowDay,
     night: PatchySnowNight,
   },
-  "LightSnowShowers": {
+  "Lightsnowshowers": {
     day: Snow,
     night: Snow,
   },
-  "ModerateOrHeavySnowShowers": {
+  "Moderateorheavysnowshowers": {
     day: Snow,
     night: Snow,
   },
-  "LightShowersOfIcePellets": {
+  "Lightshowersoficepellets": {
     day: Snow,
     night: Snow,
   },
-  "ModerateOrHeavyShowersOfIcePellets": {
+  "Moderateorheavyshowersoficepellets": {
     day: Snow,
     night: Snow,
   },
-  "PatchyLightRainWithThunder": {
+  "Patchylightrainwiththunder": {
     day: ThunderyOutbreaksDay,
     night: ThunderyOutbreaksNight,
   },
-  "ModerateOrHeavyRainWithThunder": {
-    day: Thunder,
-    night: Thunder,
+  "Moderateorheavyrainwiththunder": {
+    day: ThunderIcon,
+    night: ThunderIcon,
   },
-  "PatchyLightSnowWithThunder": {
+  "Patchylightsnowwiththunder": {
     day: Snow,
     night: Snow,
   },
-  "ModerateOrHeavySnowWithThunder": {
+  "Moderateorheavysnowwiththunder": {
     day: Snow,
     night: Snow,
-  }
+  },
 };

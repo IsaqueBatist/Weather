@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import Input from './Components/Input';
 import Card from './Components/Card';
 import Loader from './Components/Loader';
@@ -20,7 +20,6 @@ function App() {
       },
     });
   };
-
   const { data, isFetching, refetch, error } = useQuery('weather', async () => { return fetchWeather(value); }, {
     enabled: false,
     onSuccess: ({ data: { location, current, forecast } }) => {
@@ -28,8 +27,7 @@ function App() {
       const { temp_c, is_day, condition } = current;
       const { date, day: { maxtemp_c, mintemp_c, condition: conditionForecast, maxwind_kph }, astro: { sunrise, sunset } } = forecast.forecastday[1];
   
-      getDayPeriod(localtime);
-      setMainData({
+      const mainData = {
         data: {
           current: {
             city: name,
@@ -48,9 +46,13 @@ function App() {
             sunset: sunset,
           }
         }
-      });
+      };
+      getDayPeriod(localtime);
+      setMainData(mainData)
     }
   }) as ({ data: any, isFetching: boolean, refetch: () => void, error: any });
+  const memorizedData = useMemo(() => mainData, [mainData])
+  
   const handleClick = () => {
     if(value === ''){
       alert('city name is required');
@@ -87,8 +89,8 @@ function App() {
     <>
       <GlobalStyle bgColor={bgColor} />
       {error?.response.status === 400 && <ErrorMesssage>City not found</ErrorMesssage>}
-      {!mainData.data &&  <Input  onChange={(e) => setValue(e.target.value)} onClick={handleClick} />}
-      {mainData.data && <Card data={mainData.data} onClick={() => setMainData({} as IMainData)}/>}
+      {!memorizedData.data &&  <Input  onChange={(e) => setValue(e.target.value)} onClick={handleClick} />}
+      {memorizedData.data && <Card data={memorizedData.data} onClick={() => setMainData({} as IMainData)}/>}
     </>
   );
 }

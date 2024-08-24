@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Celcius from "../../assets/icons/Weather-Icons-IOS7-Style-PIXEDEN/SVG/degree-celcius.svg"
 export const MainContainer = styled.div`
-  background-color: #00000014;
+  background-color: #00000040;
   width: 70vw;
   padding: 2rem;
   border-radius: 2rem;
